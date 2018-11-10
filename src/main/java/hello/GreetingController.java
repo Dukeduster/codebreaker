@@ -12,6 +12,7 @@ public class GreetingController {
     private final AtomicLong counter = new AtomicLong();
     private  final CodeBreaker codeBreaker= new CodeBreaker();
 
+    @CrossOrigin("*")
     @RequestMapping("/codebreaker/guess/{id}")
     public ResponseEntity<Resultado> guess(@PathVariable String id) {
         Resultado resultado = new Resultado();
@@ -19,7 +20,7 @@ public class GreetingController {
         resultado.setResultado(codeBreaker.guesst(id));
         return ResponseEntity.ok().body(resultado);
     }
-
+    @CrossOrigin("*")
     @PostMapping("/codebreaker/guess")
     public ResponseEntity<Resultado> guess(@RequestBody Secret secret) {
         Resultado resultado = new Resultado();
