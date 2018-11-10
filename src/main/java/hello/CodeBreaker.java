@@ -19,6 +19,10 @@ public class CodeBreaker {
         this.secret = secret;
     }
 
+    public void setSecret(String secret){
+        this.secret=secret;
+    }
+
 
     public String guesst(String number) {
         String answer = "";
